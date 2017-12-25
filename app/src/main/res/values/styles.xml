@@ -1,0 +1,143 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:dropDownListViewStyle">@style/mySpinnerStyle</item>
+        <item name="android:listDividerAlertDialog">@color/gray</item>
+    </style>
+    <style name="mySpinnerStyle" parent="android:style/Widget.ListView.DropDown">
+        <item name="android:divider">@color/gray</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+
+    <!--首次进入无黑色-->
+    <style name="welcomeTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="19">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+    <style name="loginTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">#ffffffff</item>
+    </style>
+    <!-- electricmanagemnt -->
+    <style name="electricity_text">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">40px</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_marginLeft">29px</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+
+    </style>
+
+    <style name="electricity_iv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">29px</item>
+        <item name="android:src">@drawable/icon_back_right</item>
+    </style>
+
+    <style name="myline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#DEDFE0</item>
+    </style>
+    <!--equipmentDetail-->
+    <style name="equipment_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">#f7931e</item>
+        <item name="android:textSize">36px</item>
+    </style>
+
+    <style name="tablayout_text_apperance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <!--tv_stytle_fragment_empty-->
+    <style name="fragment_comment_tv">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">30px</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!--selectbuilding _tv-->
+    <style name="select_building_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">50px</item>
+
+    </style>
+
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+
+    <attr name="position">
+        <enum name="left_top" value="0" />
+        <enum name="left_bottom" value="1" />
+        <enum name="center" value="2" />
+        <enum name="right_top" value="3" />
+        <enum name="right_bottom" value="4" />
+    </attr>
+    <attr name="radius" format="dimension" />
+
+    <!--对话框style-->
+    <style name="MyDialog1" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@drawable/dialog_bj_wait</item>
+        <item name="android:backgroundDimEnabled">true</item><!-- 模糊 -->
+        <item name="android:backgroundDimAmount">0.6</item><!-- 灰度 -->
+    </style>
+
+    <!--按钮背景-->
+
+    <style name="big_button_bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">90px</item>
+        <item name="android:textSize">40px</item>
+        <item name="android:background">@drawable/seletor_builduser_button_change</item>
+        <item name="android:textColor">@drawable/seletor_title_bar_back_text</item>
+    </style>
+    <!--支付金额tv-->
+    <style name="dailog_pay_text">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">80px</item>
+        <item name="android:layout_margin">10px</item>
+        <item name="android:textColor">#00BCD4</item>
+        <item name="android:textSize">36px</item>
+        <item name="android:background">@drawable/selector_icon_tv_dialog_pay</item>
+    </style>
+
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.northmeter.prepaymentmanage.ui.TopupWater">
+
+    <include layout="@layout/layout_titlebar"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:background="#e6e6e6"
+        />
+    <include layout="@layout/second_title_selected_time" />
+    <View
+        style="@style/myline" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:elevation="15px"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/fragment_comment_tv"
+            android:text="@string/zffs"
+            android:textSize="32px"/>
+
+        <TextView
+            style="@style/fragment_comment_tv"
+            android:text="@string/jylx"
+            android:textSize="32px"/>
+
+        <TextView
+            style="@style/fragment_comment_tv"
+            android:text="@string/jyje"
+            android:textSize="32px"/>
+    </LinearLayout>
+    <View
+        style="@style/myline" />
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px">
+
+        <TextView
+            style="@style/fragment_comment_tv"
+            android:text="@string/tfsj" />
+
+        <TextView
+            style="@style/fragment_comment_tv"
+            android:text="@string/tfje" />
+    </LinearLayout>
+    <TextView style="@style/electricity_line" />
+-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/lv_topup_water"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/spin_kit_topup_loading"
+            style="@style/SpinKitView.Large.FadingCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:SpinKit_Color="@color/top_bar_bg"/>
+    </RelativeLayout>
+</LinearLayout>

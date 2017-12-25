@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ele_options">
+        <item>电表监控</item>
+        <item>抄表数据查询</item>
+        <item>用电数据查询</item>
+        <item>电表远程控制</item>
+    </string-array>
+    <string-array name="empty_titles">
+        <item>日用查询</item>
+        <item >月用查询</item>
+    </string-array>
+    <string-array name="commonfragment_title_0">
+        <item>抄表时间</item>
+        <item>线路名称</item>
+        <item>抄表量</item>
+    </string-array>
+    <string-array name="commonfragment_title_1">
+        <item>结算时间</item>
+        <item>线路名称</item>
+        <item>结算量</item>
+        <item>结算金额</item>
+    </string-array>
+    <string-array name="top_up_water_tablayout">
+        <item>充值记录</item>
+        <item>矫正记录</item>
+        <item>退费记录</item>
+    </string-array>
+</resources>

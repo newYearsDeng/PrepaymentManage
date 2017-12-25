@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100px"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_fs_lv_item_tu"
+        style="@style/fragment_comment_tv" />
+
+    <TextView
+        android:id="@+id/tv_lx_lv_item_tu"
+        style="@style/fragment_comment_tv" />
+
+    <LinearLayout
+        style="@style/fragment_comment_tv"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_je_lv_item_tu"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="#00BCD4"
+            android:textSize="28px"/>
+
+        <TextView
+            android:id="@+id/tv_time_lv_item_up"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single"/>
+    <item
+        android:id="@+id/setting_menu_change_pwd"
+        android:icon="@drawable/icon_setting_menu_change_pwd"
+        android:title="密码修改"/>
+    <item
+        android:id="@+id/setting_menu_qr_code"
+        android:icon="@drawable/icon_setting_menu_qr_code"
+        android:title="推广二维码"/>
+    <item
+        android:id="@+id/setting_menu_feedback"
+        android:icon="@drawable/icon_setting_menu_feedback"
+        android:title="意见反馈"/>
+    <item
+        android:id="@+id/setting_menu_clear_cache"
+        android:icon="@drawable/icon_setting_menu_clear_cache"
+        android:title="清除缓存"/>
+    <item
+        android:id="@+id/setting_menu_about"
+        android:icon="@drawable/icon_setting_menu_about"
+        android:title="关于"/>
+    <group android:id="@+id/down">
+        <item
+            android:id="@+id/setting_menu_again_login"
+            android:icon="@drawable/icon_change_loginname"
+            android:title="切换账号"/>
+    </group>
+</menu>

@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">校园水电管家</string>
+    <string name="drawer_open">打开</string>
+    <string name="drawer_close">关闭</string>
+    <!--activity_user_home-->
+    <string name="userhome_headname">北电智慧公寓</string>
+    <string name="dbjk">电表监控</string>
+    <string name="cbsjcx">抄表数据查询</string>
+    <string name="ydsjcx">用电数据查询</string>
+    <string name="dbyckz">电表远程控制</string>
+    <string name="fh">返回</string>
+    <string name="zye">总余额(元)</string>
+    <string name="dbzt">表状态</string>
+    <string name="txzt">通讯状态:</string>
+    <!--equpment_detail_activity -->
+    <string name="dbbh">电表编号</string>
+    <string name="bzdye">补助余额(元)</string>
+    <string name="yffye">预付费余额(元)</string>
+    <string name="zydl">总用电量(kwh)</string>
+    <string name="dbcb">抄表</string>
+    <string name="tfsj">退费时间</string>
+    <string name="tfje">退费金额</string>
+    <string name="zffs">支付方式</string>
+    <string name="jylx">交易类型</string>
+    <string name="jyje">交易金额</string>
+    <string name="qd">确定</string>
+    <string name="jzxz">建筑选择</string>
+    <string name="xq">校区</string>
+    <string name="jz">建筑</string>
+    <string name="lc">楼层</string>
+    <string name="xlmc">线路名称</string>
+    <string name="jsy">结算时间</string>
+    <string name="qcbd">期初表底</string>
+    <string name="qmbd">期末表底</string>
+    <string name="jsuydl">结算用量</string>
+    <string name="jsuje">结算金额(元)</string>
+    <string name="bd">保电</string>
+    <string name="jcbd">解除保电</string>
+    <string name="tz">跳闸</string>
+    <string name="hz">合闸</string>
+    <string name="fj">房间</string>
+    <string name="czsj">操作时间</string>
+    <string name="czlx">操作类型</string>
+    <string name="czjg">操作结果</string>
+    <string name="company_name">深圳市北电仪表有限公司 版权所有</string>
+
+
+    <!-- PayActivity -->
+    <string name="pay_by_wx">客户端签名微信支付</string>
+    <string name="pay_by_wxap">服务器端签名微信支付</string>
+    <string name="check_pay">检查微信版本是否支持支付</string>
+    <string name="input_reqkey">输入reqkey</string>
+    <string name="input_package_value">输入package value</string>
+    <string name="input_sign">输入sign</string>
+    <string name="getting_access_token">正在获取access token...</string>
+    <string name="get_access_token_succ">获取access token成功</string>
+    <string name="get_access_token_fail" formatted="false">获取access token失败，原因%s</string>
+    <string name="getting_prepayid">正在获取预支付订单...</string>
+    <string name="paying">支付中</string>
+    <string name="get_prepayid_succ">获取prepayid成功</string>
+    <string name="get_prepayid_fail" formatted="false">获取prepayid失败，原因%s</string>
+
+    <!-- WXPayEntryActivity -->
+    <string name="pay_result_tip">这个界面用于显示第三方app通过微信支付的结果</string>
+    <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
+
+    <!--GateLockFirstActivity-->
+    <string name = "kmtx">开门提醒</string>
+    <string name = "gjsz">高级设置</string>
+    <string name = "jlcx">记录查询</string>
+    <string name = "fxys">分享钥匙</string>
+    <string name = "ycks">远程开锁</string>
+    <string name = "sbxx">设备信息</string>
+
+</resources>

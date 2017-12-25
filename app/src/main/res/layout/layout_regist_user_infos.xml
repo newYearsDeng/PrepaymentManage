@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="24px"
+              android:layout_marginRight="24px"
+              android:background="@drawable/shape_task_edit_text_bg"
+              android:orientation="vertical">
+
+    <!--手机号码-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90px">
+
+        <TextView
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="24px"
+            android:text="手机号"
+            android:textColor="#000"
+            android:textSize="30px"/>
+
+        <EditText
+            android:id="@+id/et_regist_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="24px"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:textColor="#000"
+            android:textSize="30px"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="24px"
+        android:layout_marginRight="24px"
+        android:background="#55000000"
+        />
+
+    s
+    <!--用户姓名-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96px">
+
+        <TextView
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24px"
+            android:text="用户姓名"
+            android:textColor="#000"
+            android:textSize="30px"
+            />
+
+        <EditText
+            android:id="@+id/et_regist_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="24px"
+            android:background="@null"
+            android:inputType="textPersonName"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#000"
+            android:textSize="30px"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="24px"
+        android:layout_marginRight="24px"
+        android:background="#55000000"
+        />
+
+    <!--入校时间-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="24px"
+            android:text="入校时间"
+            android:textColor="#000"
+            android:textSize="30px"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="24px">
+
+            <TextView
+                android:id="@+id/tv_regist_into_school_date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:hint="    年    月    日"
+                android:textColor="@color/selector_login_text_color"
+                android:textSize="36px"/>
+
+            <ImageView
+                android:layout_width="20px"
+                android:layout_height="20px"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="60px"
+                android:background="@drawable/icon_pull_down"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="24px"
+        android:layout_marginRight="24px"
+        android:background="#55000000"
+        />
+
+    <!--学号-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96px">
+
+        <TextView
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24px"
+            android:text="学    号"
+            android:textColor="#000"
+            android:textSize="30px"
+            />
+
+        <EditText
+            android:id="@+id/et_regist_student_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="24px"
+            android:background="@null"
+            android:maxLength="32"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#000"
+            android:textSize="30px"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="24px"
+        android:layout_marginRight="24px"
+        android:background="#55000000"
+        />
+
+    <!--入住宿舍-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96px">
+
+        <TextView
+            android:layout_width="150px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="24px"
+            android:text="入住宿舍"
+            android:textColor="#000"
+            android:textSize="30px"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="24px">
+
+                <TextView
+                    android:id="@+id/tv_regist_into_house"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="请选择宿舍"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/selector_login_text_color"
+                    android:textSize="30px"/>
+
+                <ImageView
+                    android:layout_width="20px"
+                    android:layout_height="20px"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginTop="60px"
+                    android:background="@drawable/icon_pull_down"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

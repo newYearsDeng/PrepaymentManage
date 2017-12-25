@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_titlebar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#EEEEEF"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="397px"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="30px"
+            android:background="@drawable/image_new_page_2">
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_dbjk_electricity"
+            android:layout_width="match_parent"
+            android:layout_height="120px"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_tvbg_electricitymanagement">
+
+            <ImageView
+                android:id="@+id/iv_dw_jk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:src="@drawable/icon_dw_jk" />
+
+            <TextView
+                android:id="@+id/tv_sbjk"
+                style="@style/electricity_text"
+                android:layout_toRightOf="@+id/iv_dw_jk"
+                android:text="@string/dbjk" />
+
+            <ImageView style="@style/electricity_iv" />
+        </RelativeLayout>
+
+        <TextView style="@style/myline" />
+
+        <RelativeLayout
+            android:id="@+id/rl_cbsjcx_elctricity"
+            android:layout_width="match_parent"
+            android:layout_height="120px"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_tvbg_electricitymanagement">
+
+            <ImageView
+                android:id="@+id/iv_dwcb_cx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:src="@drawable/icon_dwcb_cx" />
+
+            <TextView
+                android:id="@+id/tv_cbsjcx"
+                style="@style/electricity_text"
+                android:layout_toRightOf="@+id/iv_dwcb_cx"
+                android:text="@string/cbsjcx" />
+
+            <ImageView style="@style/electricity_iv" />
+        </RelativeLayout>
+
+        <TextView style="@style/myline" />
+
+        <RelativeLayout
+            android:id="@+id/rl_ydsjcx_elcricity"
+            android:layout_width="match_parent"
+            android:layout_height="120px"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_tvbg_electricitymanagement">
+
+            <ImageView
+                android:id="@+id/iv_dwsj_cx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:src="@drawable/icon_dwsj_cx" />
+
+            <TextView
+                android:id="@+id/tv_ydsjcx"
+                style="@style/electricity_text"
+                android:layout_toRightOf="@id/iv_dwsj_cx"
+                android:text="@string/ydsjcx" />
+
+            <ImageView style="@style/electricity_iv" />
+        </RelativeLayout>
+
+        <TextView style="@style/myline" />
+
+        <RelativeLayout
+            android:id="@+id/rl_dbyckz_electricity"
+            android:layout_width="match_parent"
+            android:layout_height="120px"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_tvbg_electricitymanagement">
+
+            <ImageView
+                android:id="@+id/iv_dw_kz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20px"
+                android:src="@drawable/icon_dw_kz" />
+
+            <TextView
+                android:id="@+id/tv_dbyckz"
+                style="@style/electricity_text"
+                android:layout_toRightOf="@+id/iv_dw_kz"
+                android:text="@string/dbyckz" />
+
+            <ImageView style="@style/electricity_iv" />
+        </RelativeLayout>
+
+        <TextView style="@style/myline" />
+
+    </LinearLayout>
+</LinearLayout>

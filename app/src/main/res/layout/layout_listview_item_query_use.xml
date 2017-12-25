@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="100px"
+    android:padding="20px">
+    <TextView
+        android:id="@+id/tv1_cq_use"
+        style="@style/fragment_comment_tv"
+     />
+    <TextView
+        android:id="@+id/tv2_cq_use"
+        style="@style/fragment_comment_tv"
+
+        android:textColor="#e2963f"/>
+    <TextView
+        android:id="@+id/tv4_cq_use"
+        style="@style/fragment_comment_tv"
+        android:textColor="#e2963f"
+        android:visibility="gone"
+        />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv3_cq_use"
+            android:textColor="#e2963f"
+            android:textSize="30px"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/iv_cq_use"
+            android:layout_marginLeft="20px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:src="@drawable/icon_more"/>
+    </LinearLayout>
+    <!--<TextView
+        android:id="@+id/tv3_cq"
+        style="@style/fragment_comment_tv"
+        android:text="100"
+        android:textColor="#e2963f"
+        />-->
+</LinearLayout>

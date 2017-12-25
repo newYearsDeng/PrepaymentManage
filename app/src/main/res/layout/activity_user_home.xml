@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawerlayout_user"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_home_setting"/>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_userhome_water_ele"
+                android:layout_width="160px"
+                android:layout_height="160px"
+                android:layout_gravity="center"
+                android:layout_marginTop="92px"
+                android:background="@drawable/selector_user_home_water_ele"
+                android:clickable="true"/>
+
+            <ImageView
+                android:id="@+id/iv_userhome_lighting"
+                android:layout_marginLeft="160px"
+                android:layout_width="160px"
+                android:layout_height="160px"
+                android:layout_gravity="center"
+                android:layout_marginTop="86px"
+                android:background="@drawable/selector_user_home_lighting"
+                android:clickable="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_manage_home_lock"
+                android:layout_width="160px"
+                android:layout_height="160px"
+                android:layout_gravity="center"
+                android:background="@drawable/selector_manage_home_lock"
+                android:clickable="true"/>
+
+            <ImageView
+                android:id="@+id/iv_userhome_air_condition"
+                android:layout_marginLeft="160px"
+                android:layout_width="160px"
+                android:layout_height="160px"
+                android:background="@drawable/selector_user_home_air_condition"
+                android:clickable="true"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        app:itemIconTint="@color/top_bar_bg"
+        app:itemTextColor="#000000"
+        app:headerLayout="@layout/layout_home_navigation_header"
+        app:menu="@menu/home_setting_menu"/>
+</android.support.v4.widget.DrawerLayout>

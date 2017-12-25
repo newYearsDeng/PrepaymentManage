@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:layout_width="match_parent"
+    android:id="@+id/dl"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/layout_titlebar" />
+        <android.support.design.widget.TabLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tl_empty"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:background="#00BCD4"
+            android:elevation="10px"
+            app:tabIndicatorColor="#CCFEFF"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="#fff"
+            app:tabTextAppearance="@style/tablayout_text_apperance"
+            app:tabTextColor="#fff" />
+        <com.northmeter.prepaymentmanage.ui.widget.NoScrollViewPager
+            android:id="@+id/vp_empty"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <!--右侧的布局-->
+    <fragment
+        android:id="@+id/fg_right"
+        android:layout_gravity="right"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:name="com.northmeter.prepaymentmanage.ui.fragments.SelectBuildingFragment"
+        android:clickable="true">
+    </fragment>
+</android.support.v4.widget.DrawerLayout>
+
+

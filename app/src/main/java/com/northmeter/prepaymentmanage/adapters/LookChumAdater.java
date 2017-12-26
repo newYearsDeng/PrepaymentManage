@@ -1,5 +1,6 @@
 package com.northmeter.prepaymentmanage.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,11 +24,11 @@ import butterknife.ButterKnife;
  */
 public class LookChumAdater extends RecyclerView.Adapter<LookChumAdater.LookChumViewholder> {
 
-    private final DeviceChoiceActivity mActivity;
+    private Context mActivity;
     private final List<LookChumBean.RESPONSEXMLBean> mData;
 
-    public LookChumAdater(DeviceChoiceActivity deviceChoiceActivity, List<LookChumBean.RESPONSEXMLBean> responsexmlBeen) {
-        this.mActivity = deviceChoiceActivity;
+    public LookChumAdater(Context context, List<LookChumBean.RESPONSEXMLBean> responsexmlBeen) {
+        this.mActivity = context;
         this.mData = responsexmlBeen;
     }
 

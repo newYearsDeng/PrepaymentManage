@@ -1,5 +1,6 @@
 package com.northmeter.prepaymentmanage.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +28,7 @@ import butterknife.ButterKnife;
 public class DeviceChoiceAdapter extends RecyclerView.Adapter<DeviceChoiceAdapter.DeviceChoiceViewholder> {
 
     private final List<UserMeterBean.RESPONSEXMLBean> mData;
-    private final DeviceChoiceActivity mAcivity;
+    private Context mAcivity;
 
     public interface OnItemClickListener {
         void onItemClick(View view, int position);
@@ -39,8 +40,8 @@ public class DeviceChoiceAdapter extends RecyclerView.Adapter<DeviceChoiceAdapte
         this.mOnItemClickListener = mOnItemClickListener;
     }
 
-    public DeviceChoiceAdapter(DeviceChoiceActivity deviceChoiceActivity, List<UserMeterBean.RESPONSEXMLBean> responsexml) {
-        mAcivity = deviceChoiceActivity;
+    public DeviceChoiceAdapter(Context context, List<UserMeterBean.RESPONSEXMLBean> responsexml) {
+        mAcivity = context;
         mData = responsexml;
     }
 

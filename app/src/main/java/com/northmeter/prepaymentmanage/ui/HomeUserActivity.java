@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.northmeter.prepaymentmanage.R;
 import com.northmeter.prepaymentmanage.base.BaseActivity;
+import com.northmeter.prepaymentmanage.ui.light.activity.UserLightChoiceActivity;
 import com.northmeter.prepaymentmanage.util.AES;
 import com.northmeter.prepaymentmanage.util.Contants;
 import com.northmeter.prepaymentmanage.util.LoggerUtil;
@@ -39,6 +40,8 @@ public class HomeUserActivity extends BaseActivity {
     @BindView(R.id.navigation_view)
     NavigationView mNavigationView;
 
+    private String buildingID;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_user_home;
@@ -46,6 +49,12 @@ public class HomeUserActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        //从sp里面取出loginid
+        String spDecrypeId = (String) SharedPreferencesUtil.get(MyApplication.getContext(), Contants.SP_AES_ID_KEY, "");
+        //根据id取出buidingid
+        String spDecrypeBuildingId = (String) SharedPreferencesUtil.get(MyApplication.getContext(), spDecrypeId, "");
+        buildingID = AES.decrypt(spDecrypeBuildingId, Contants.SP_AES_BUILDING_KEY);
+        LoggerUtil.d("" + buildingID);
     }
 
 
@@ -57,43 +66,34 @@ public class HomeUserActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_userhome_water_ele:
-                //从sp里面取出loginid
-                String spDecrypeId = (String) SharedPreferencesUtil.get(MyApplication.getContext(), Contants.SP_AES_ID_KEY, "");
-                //根据id取出buidingid
-                String spDecrypeBuildingId = (String) SharedPreferencesUtil.get(MyApplication.getContext(), spDecrypeId, "");
-                String buidingId = AES.decrypt(spDecrypeBuildingId, Contants.SP_AES_BUILDING_KEY);
-                LoggerUtil.d("" + buidingId);
-
-                if (TextUtils.isEmpty(buidingId)) {
+                if (TextUtils.isEmpty(buildingID)) {
                     //如果buidingid为空就表示没绑定房间
                     startActivity(new Intent(MyApplication.getContext(), BindRoomActivity.class));
                 } else {
                     Intent intent = new Intent(MyApplication.getContext(), DeviceChoiceActivity.class);
                     startActivity(intent);
                 }
-
                 break;
             case R.id.iv_manage_home_lock://门锁
-                String spDecrypeId_1 = (String) SharedPreferencesUtil.get(MyApplication.getContext(), Contants.SP_AES_ID_KEY, "");
-                //根据id取出buidingid
-                String spDecrypeBuildingId_1 = (String) SharedPreferencesUtil.get(MyApplication.getContext(), spDecrypeId_1, "");
-                String buidingId_1 = AES.decrypt(spDecrypeBuildingId_1, Contants.SP_AES_BUILDING_KEY);
-                LoggerUtil.d("" + buidingId_1);
-
-                if (TextUtils.isEmpty(buidingId_1)) {
+                if (TextUtils.isEmpty(buildingID)) {
                     //如果buidingid为空就表示没绑定房间
                     startActivity(new Intent(MyApplication.getContext(), BindRoomActivity.class));
                 } else {
-                    Intent intent2 = new Intent(MyApplication.getContext(),GateLockFirstActivity.class);
-                    intent2.putExtra(Contants.METERTYPE, "门锁");
-                    intent2.putExtra("power", "user");
-                    startActivity(intent2);
+                    Intent intent = new Intent(MyApplication.getContext(),GateLockFirstActivity.class);
+                    intent.putExtra(Contants.METERTYPE, "门锁");
+                    intent.putExtra("power", "user");
+                    startActivity(intent);
                 }
-
-
                 break;
             case R.id.iv_userhome_lighting://用户照明管理
-                ToastUtil.showShort(MyApplication.getContext(), "功能暂未开放");
+                //ToastUtil.showShort(MyApplication.getContext(), "功能暂未开放");
+                if (TextUtils.isEmpty(buildingID)) {
+                    //如果buidingid为空就表示没绑定房间
+                    startActivity(new Intent(MyApplication.getContext(), BindRoomActivity.class));
+                } else {
+                    Intent intent = new Intent(MyApplication.getContext(), UserLightChoiceActivity.class);
+                    startActivity(intent);
+                }
                 break;
             case R.id.iv_userhome_air_condition://用户空调管理
                 ToastUtil.showShort(MyApplication.getContext(), "功能暂未开放");

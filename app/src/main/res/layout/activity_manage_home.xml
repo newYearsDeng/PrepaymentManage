@@ -25,7 +25,6 @@
                 android:layout_width="160px"
                 android:layout_height="160px"
                 android:layout_gravity="center"
-                android:layout_marginTop="92px"
                 android:background="@drawable/selector_manage_home_water"
                 android:clickable="true"/>
 
@@ -35,7 +34,6 @@
                 android:layout_width="160px"
                 android:layout_height="160px"
                 android:layout_gravity="center"
-                android:layout_marginTop="86px"
                 android:background="@drawable/selector_manage_home_lighting"
                 android:clickable="true"/>
         </LinearLayout>
@@ -49,7 +47,7 @@
                 android:id="@+id/iv_manage_home_lock"
                 android:layout_width="160px"
                 android:layout_height="160px"
-                android:layout_gravity="center"
+                android:layout_gravity="top"
                 android:background="@drawable/selector_manage_home_lock"
                 android:clickable="true"/>
 
@@ -58,7 +56,7 @@
                 android:layout_marginLeft="160px"
                 android:layout_width="160px"
                 android:layout_height="160px"
-                android:layout_gravity="center"
+                android:layout_gravity="top"
                 android:background="@drawable/selector_manage_home_collect_devices"
                 android:clickable="true"/>
 

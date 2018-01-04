@@ -10,7 +10,6 @@ import android.widget.TextView;
 import com.northmeter.prepaymentmanage.R;
 import com.northmeter.prepaymentmanage.base.BaseActivity;
 import com.northmeter.prepaymentmanage.ui.GateLock.MainOfLogqueryActivity;
-import com.northmeter.prepaymentmanage.ui.GateLock.OpenDoorActivity;
 import com.northmeter.prepaymentmanage.util.Contants;
 
 import butterknife.BindView;

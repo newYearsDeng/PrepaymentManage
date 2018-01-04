@@ -22,7 +22,7 @@ public class MyDialogWait extends Dialog {
     }
     public void init(MyDialog_interface listenrer){
         this.listenrer=listenrer;
-       this.setCanceledOnTouchOutside(false);
+        this.setCanceledOnTouchOutside(false);
     }
 
     @Override

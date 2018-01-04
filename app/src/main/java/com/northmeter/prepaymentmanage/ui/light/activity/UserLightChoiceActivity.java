@@ -78,7 +78,7 @@ public class UserLightChoiceActivity extends BaseActivity implements IDeviceChoi
                 String metertype = responsexml.get(position).getMETERTYPE();
                 String comaddress = responsexml.get(position).getCOMADDRESS();
                 LoggerUtil.d(comaddress);
-                Intent intent = new Intent(MyApplication.getContext(), DevicesQueryActivity.class);
+                Intent intent = new Intent(MyApplication.getContext(), UserLightControlActivity.class);
                 intent.putExtra(Contants.DEVICES_QUERY_METER_TYPE_INTENT_EXTRA, metertype);
                 intent.putExtra(Contants.DEVICES_QUERY_COMADDRESS_INTENT_EXTRA, comaddress);
                 startActivity(intent);
@@ -96,7 +96,7 @@ public class UserLightChoiceActivity extends BaseActivity implements IDeviceChoi
         recyclerView.addItemDecoration(new DividerItemDecoration(MyApplication.getContext(), linearLayoutManager.getOrientation()));
 
         new AlertDialog.Builder(this)
-                .setTitle("住在该房间的同学有：")
+                .setTitle("住在该房间的人：")
                 .setView(recyclerView)
                 .show();
     }

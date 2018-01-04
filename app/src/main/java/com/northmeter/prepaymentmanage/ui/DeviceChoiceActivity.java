@@ -98,7 +98,7 @@ public class DeviceChoiceActivity extends BaseActivity implements IDeviceChoiceA
         recyclerView.addItemDecoration(new DividerItemDecoration(MyApplication.getContext(), linearLayoutManager.getOrientation()));
 
         new AlertDialog.Builder(this)
-                .setTitle("住在该房间的同学有：")
+                .setTitle("住在该房间的人：")
                 .setView(recyclerView)
                 .show();
     }

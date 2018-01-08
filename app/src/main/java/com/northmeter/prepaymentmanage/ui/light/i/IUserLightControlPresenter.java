@@ -5,6 +5,7 @@ package com.northmeter.prepaymentmanage.ui.light.i;
  */
 public interface IUserLightControlPresenter {
     void sendControlData(String comaddress, String operatortype);
+    void getData(String meterType, String comaddress);
     /**
      * 取消rx注册
      */

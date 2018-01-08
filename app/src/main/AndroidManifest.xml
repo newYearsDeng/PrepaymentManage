@@ -87,6 +87,7 @@
         <!--灯光控制-->
         <activity android:name=".ui.light.activity.UserLightChoiceActivity"/>
         <activity android:name=".ui.light.activity.UserLightControlActivity"/>
+        <activity android:name=".ui.light.activity.ManagerLightControlActivity"/>
         <!--门锁相关界面-->
         <activity android:name=".ui.GateLockFirstActivity"/>
         <activity android:name=".ui.GateLock.MainOfLogqueryActivity"/>

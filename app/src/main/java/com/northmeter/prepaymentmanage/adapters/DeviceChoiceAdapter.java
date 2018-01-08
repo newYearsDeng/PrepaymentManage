@@ -56,9 +56,23 @@ public class DeviceChoiceAdapter extends RecyclerView.Adapter<DeviceChoiceAdapte
         String metertype = mData.get(position).getMETERTYPE();
 
 
-        Picasso.with(MyApplication.getContext())
-                .load("水".equals(metertype) ? R.drawable.icon_device_choice_water : R.drawable.icon_device_choice_electricity)
-                .into(holder.mIvMeterType);
+        switch(metertype){
+            case "水":
+                Picasso.with(MyApplication.getContext()).load(R.drawable.icon_device_choice_water).into(holder.mIvMeterType);
+                break;
+            case "电":
+                Picasso.with(MyApplication.getContext()).load(R.drawable.icon_device_choice_electricity).into(holder.mIvMeterType);
+                break;
+            case "灯控":
+                Picasso.with(MyApplication.getContext()).load(R.drawable.icon_device_choice_light).into(holder.mIvMeterType);
+                break;
+            default:
+                Picasso.with(MyApplication.getContext()).load(R.drawable.icon_device_choice_light).into(holder.mIvMeterType);
+                break;
+        }
+//        Picasso.with(MyApplication.getContext())
+//                .load("水".equals(metertype) ? R.drawable.icon_device_choice_water : R.drawable.icon_device_choice_electricity)
+//                .into(holder.mIvMeterType);
 
         holder.mTvMeterName.setText("设备" + (position + 1) + "   " + mData.get(position).getCOMADDRESS());
 

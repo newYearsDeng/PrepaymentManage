@@ -30,13 +30,23 @@
 
             <ImageView
                 android:id="@+id/iv_manage_home_electricity"
-                android:layout_marginLeft="160px"
+                android:layout_marginLeft="70px"
                 android:layout_width="160px"
                 android:layout_height="160px"
                 android:layout_gravity="center"
                 android:background="@drawable/selector_manage_home_lighting"
                 android:clickable="true"/>
+
+            <ImageView
+                android:id="@+id/iv_manage_home_light"
+                android:layout_marginLeft="70px"
+                android:layout_width="160px"
+                android:layout_height="160px"
+                android:layout_gravity="center"
+                android:background="@drawable/selector_user_home_lighting"
+                android:clickable="true"/>
         </LinearLayout>
+
         <LinearLayout
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -53,11 +63,18 @@
 
             <ImageView
                 android:id="@+id/iv_manage_home_equipment"
-                android:layout_marginLeft="160px"
+                android:layout_marginLeft="70px"
                 android:layout_width="160px"
                 android:layout_height="160px"
                 android:layout_gravity="top"
                 android:background="@drawable/selector_manage_home_collect_devices"
+                android:clickable="true"/>
+            <ImageView
+                android:layout_marginLeft="70px"
+                android:layout_width="160px"
+                android:layout_height="160px"
+                android:layout_gravity="top"
+                android:visibility="invisible"
                 android:clickable="true"/>
 
         </LinearLayout>

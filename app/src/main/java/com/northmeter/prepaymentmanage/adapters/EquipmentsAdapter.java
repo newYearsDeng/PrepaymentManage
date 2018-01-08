@@ -92,11 +92,18 @@ public class EquipmentsAdapter extends BaseAdapter{
     private void setUI(int i, ViewHolder vh) {
 
         EquipmentBean.RESPONSEXMLBean equipment = equipments.get(i);
-        if(type.equals("水")){
-            vh.iv.setImageResource(R.drawable.icon_device_choice_water);
-        }else if(type.equals("门锁")){
-            vh.iv.setImageResource(R.drawable.icon_device_choice_doorlock);
+        switch(type){
+            case "水":
+                vh.iv.setImageResource(R.drawable.icon_device_choice_water);
+                break;
+            case "门锁":
+                vh.iv.setImageResource(R.drawable.icon_device_choice_doorlock);
+                break;
+            case "灯控":
+                vh.iv.setImageResource(R.drawable.icon_device_choice_light);
+                break;
         }
+
         if(equipment!=null){
             vh.tv_routeName.setText(equipment.getBuildingName());
             vh.tv_balance.setText(equipment.getZYE());

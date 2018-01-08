@@ -24,6 +24,8 @@ import com.northmeter.prepaymentmanage.presenter.EquipmentSelectionPresenter;
 import com.northmeter.prepaymentmanage.presenter.i.IEquipmentSelectionPresenter;
 import com.northmeter.prepaymentmanage.ui.GateLock.OpenDoorDetailActivity;
 import com.northmeter.prepaymentmanage.ui.i.IEquipmentSelection;
+import com.northmeter.prepaymentmanage.ui.light.activity.ManagerLightControlActivity;
+import com.northmeter.prepaymentmanage.ui.light.activity.UserLightControlActivity;
 import com.northmeter.prepaymentmanage.ui.widget.CustomFooterView;
 import com.northmeter.prepaymentmanage.util.AES;
 import com.northmeter.prepaymentmanage.util.Contants;
@@ -83,7 +85,7 @@ public class EquipmentSelection extends BaseActivity implements XRefreshView.XRe
         type = getIntent().getStringExtra(Contants.METERTYPE);
         power = getIntent().getStringExtra("power");
 
-        if(type.equals("门锁")){
+        if(type.equals("门锁")||type.equals("灯控")){
             tvTitleTitlebar.setText(type + "设备");
         }else{
             tvTitleTitlebar.setText("用" + type + "设备");
@@ -301,16 +303,26 @@ public class EquipmentSelection extends BaseActivity implements XRefreshView.XRe
         if (equipment == null) {
             return;
         }
-        if(type.equals("门锁")){
-            Intent intent = new Intent(EquipmentSelection.this, OpenDoorDetailActivity.class);
-            intent.putExtra("equipment", equipment);
-            intent.putExtra(Contants.METERTYPE, type);
-            startActivity(intent);
-        }else{
-            Intent intent = new Intent(EquipmentSelection.this, EquipmentDetail.class);
-            intent.putExtra("equipment", equipment);
-            intent.putExtra(Contants.METERTYPE, type);
-            startActivity(intent);
+
+        switch(type){
+            case "门锁":
+                Intent intent_0 = new Intent(EquipmentSelection.this, OpenDoorDetailActivity.class);
+                intent_0.putExtra("equipment", equipment);
+                intent_0.putExtra(Contants.METERTYPE, type);
+                startActivity(intent_0);
+                break;
+            case "灯控":
+                Intent intent_1 = new Intent(EquipmentSelection.this, ManagerLightControlActivity.class);
+                intent_1.putExtra("equipment", equipment);
+                intent_1.putExtra(Contants.METERTYPE, type);
+                startActivity(intent_1);
+                break;
+            default:
+                Intent intent_2 = new Intent(EquipmentSelection.this, EquipmentDetail.class);
+                intent_2.putExtra("equipment", equipment);
+                intent_2.putExtra(Contants.METERTYPE, type);
+                startActivity(intent_2);
+                break;
         }
 
     }

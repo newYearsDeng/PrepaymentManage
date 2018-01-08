@@ -111,7 +111,7 @@
             android:background="@drawable/icon_bottom_bg_remote_control"
             android:orientation="horizontal"
             android:elevation="10px"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:id="@+id/tv1_control"

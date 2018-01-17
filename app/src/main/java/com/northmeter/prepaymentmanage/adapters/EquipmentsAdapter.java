@@ -100,7 +100,7 @@ public class EquipmentsAdapter extends BaseAdapter{
                 vh.iv.setImageResource(R.drawable.icon_device_choice_doorlock);
                 break;
             case "灯控":
-                vh.iv.setImageResource(R.drawable.icon_device_choice_light);
+                vh.iv.setImageResource(R.drawable.icon_device_choice_electricity);
                 break;
         }
 

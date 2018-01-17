@@ -36,13 +36,12 @@ public class EquipmentSelectionPresenter implements IEquipmentSelectionPresenter
 
     @Override
     public void getData(final int refreshType, String type, String selectedArea_ID, String controlType , int pageIndex, int pageSize) {
-        Log.i("LHT","--EquipmentSelection---");
-        Log.i("LHT","type "+type);
-        Log.i("LHT","buildingId "+selectedArea_ID);
-        Log.i("LHT","controlType "+controlType);
-        Log.i("LHT","pageIndex "+pageIndex);
-        Log.i("LHT","pageSize "+pageSize);
-        Log.i("LHT","-----------------------");
+        Log.i("TAG","type "+type);
+        Log.i("TAG","buildingId "+selectedArea_ID);
+        Log.i("TAG","controlType "+controlType);
+        Log.i("TAG","pageIndex "+pageIndex);
+        Log.i("TAG","pageSize "+pageSize);
+        Log.i("TAG","-----------------------");
 
         subscription=RetrofitHelper.getApiService()
                 .getMeterInfo(selectedArea_ID, type,controlType, pageIndex+"", pageSize+"")

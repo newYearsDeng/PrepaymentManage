@@ -51,10 +51,9 @@ public class OpenDoorActivity extends BaseActivity {
         recyclerOpendoor.setLayoutManager(linearLayoutManager);
         recyclerOpendoor.addItemDecoration(new DividerItemDecoration(MyApplication.getContext(), linearLayoutManager.getOrientation()));
 
-
         models = new ArrayList<OpenDoor_Model>();
         String [] name = new String[]{"大门","客厅","卧室一","卧室二","卧室三"};
-        for(int i = 0 ;i<5;i++){
+        for(int i = 0 ; i < 5 ; i ++){
             OpenDoor_Model model = new OpenDoor_Model();
             model.setLockName(name[i]);
             models.add(model);

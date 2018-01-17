@@ -3,6 +3,7 @@ package com.northmeter.prepaymentmanage.ui.light.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.github.ybq.android.spinkit.SpinKitView;
@@ -36,6 +37,26 @@ public class ManagerLightControlActivity extends BaseActivity implements IUserLi
     CheckBox imageLightControl3;
     @BindView(R.id.image_light_control_4)
     CheckBox imageLightControl4;
+
+    @BindView(R.id.tv_devices_query_prepayment_balance)
+    TextView mTvPrepaymentBalance;
+    @BindView(R.id.tv_devices_query_buzhu_balance)
+    TextView mTvBuzhuBalance;
+    @BindView(R.id.tv_devices_query_total_balance)
+    TextView mTvTotalBalance;
+    @BindView(R.id.tv_devices_query_total_use)
+    TextView mTvTotalUse;
+    @BindView(R.id.tv_devices_query_state)
+    TextView mTvState;
+    @BindView(R.id.tv_devices_query_update_time)
+    TextView mTvUpdateTime;
+    @BindView(R.id.rl_layout_devices_query_prepayment_balance)
+    RelativeLayout mRlLayout;
+
+    @BindView(R.id.tv_title_right_titlebar)
+    TextView tv_title_right_titlebar;
+
+
     @BindView(R.id.spin_kit_devices_query_loading)
     SpinKitView spinKitTopupLoading;
     private EquipmentBean.RESPONSEXMLBean equipment;
@@ -52,6 +73,8 @@ public class ManagerLightControlActivity extends BaseActivity implements IUserLi
     @Override
     protected void initView(Bundle savedInstanceState) {
         mTvTitleTitlebar.setText("灯控管理");
+        tv_title_right_titlebar.setVisibility(View.VISIBLE);
+        tv_title_right_titlebar.setText("抄表");
         equipment = (EquipmentBean.RESPONSEXMLBean) getIntent().getSerializableExtra("equipment");
         type = getIntent().getStringExtra(Contants.METERTYPE);
         comaddress = equipment.getCOMADDRESS();
@@ -66,14 +89,18 @@ public class ManagerLightControlActivity extends BaseActivity implements IUserLi
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.ll_back_titlebar, R.id.image_light_control_all, R.id.image_light_control_1, R.id.image_light_control_2, R.id.image_light_control_3, R.id.image_light_control_4})
+    @OnClick({R.id.ll_back_titlebar, R.id.image_light_control_all, R.id.image_light_control_1,
+            R.id.image_light_control_2, R.id.image_light_control_3, R.id.image_light_control_4,
+            R.id.tv_title_right_titlebar})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_back_titlebar:
                 finish();
                 break;
+            case R.id.tv_title_right_titlebar:
+                userLightControlPresenter.readingMeter(comaddress,type);
+                break;
             case R.id.image_light_control_all:
-
                 break;
             case R.id.image_light_control_1:
                 break;
@@ -88,7 +115,16 @@ public class ManagerLightControlActivity extends BaseActivity implements IUserLi
 
     @Override
     public void showData(String yffye, String bzye, String zye, String zyl, String bzt, String updateTime) {
-
+        if ("".equals(bzye)) {
+            bzye = "0.00";
+        }
+        mTvTotalBalance.setText(zye);
+        mRlLayout.setVisibility(View.VISIBLE);
+        mTvBuzhuBalance.setText(bzye);
+        mTvPrepaymentBalance.setText(yffye);
+        mTvTotalUse.setText(zyl);
+        mTvState.setText(bzt);
+        mTvUpdateTime.setText(updateTime);
     }
 
     @Override

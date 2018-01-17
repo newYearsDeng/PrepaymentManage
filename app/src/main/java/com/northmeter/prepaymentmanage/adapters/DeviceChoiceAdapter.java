@@ -63,11 +63,8 @@ public class DeviceChoiceAdapter extends RecyclerView.Adapter<DeviceChoiceAdapte
             case "电":
                 Picasso.with(MyApplication.getContext()).load(R.drawable.icon_device_choice_electricity).into(holder.mIvMeterType);
                 break;
-            case "灯控":
-                Picasso.with(MyApplication.getContext()).load(R.drawable.icon_device_choice_light).into(holder.mIvMeterType);
-                break;
             default:
-                Picasso.with(MyApplication.getContext()).load(R.drawable.icon_device_choice_light).into(holder.mIvMeterType);
+                Picasso.with(MyApplication.getContext()).load(R.drawable.icon_device_choice_electricity).into(holder.mIvMeterType);
                 break;
         }
 //        Picasso.with(MyApplication.getContext())

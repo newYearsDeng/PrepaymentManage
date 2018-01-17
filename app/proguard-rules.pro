@@ -88,7 +88,7 @@
 
 #---------------------------------2.第三方包-------------------------------
 #sweetDialog
--keep  class cn.pedant.SweetAlert.**{*;}
+-keep class cn.pedant.SweetAlert.**{*;}
 #rx_cache
 -dontwarn io.rx_cache.internal.**
 -keepclassmembers enum io.rx_cache.Source { *; }
@@ -142,6 +142,9 @@
 -keep class com.tencent.mm.sdk.** {
    *;
 }
+
+-dontwarn org.apache.http.**
+-keep class org.apache.http.** {*;}
 
 
 

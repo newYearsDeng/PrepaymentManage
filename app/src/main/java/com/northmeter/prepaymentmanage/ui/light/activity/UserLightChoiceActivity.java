@@ -59,7 +59,7 @@ public class UserLightChoiceActivity extends BaseActivity implements IDeviceChoi
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        mTvTitleTitlebar.setText("设备选择");
+        mTvTitleTitlebar.setText("灯控选择");
         mPresenter = new DeviceChoicePresenter(this);
         mPresenter.getMeters();
     }

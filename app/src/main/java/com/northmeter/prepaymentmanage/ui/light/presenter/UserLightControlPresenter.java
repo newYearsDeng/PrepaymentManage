@@ -2,9 +2,9 @@ package com.northmeter.prepaymentmanage.ui.light.presenter;
 
 import android.util.Log;
 
+import com.northmeter.prepaymentmanage.model.EleUseInfoBean;
 import com.northmeter.prepaymentmanage.model.NewIdBean;
 import com.northmeter.prepaymentmanage.model.ReadingState;
-import com.northmeter.prepaymentmanage.model.WaterUseInfoBean;
 import com.northmeter.prepaymentmanage.ui.light.i.IUserLightControlPresenter;
 import com.northmeter.prepaymentmanage.ui.light.i.IUserLightControlShow;
 import com.northmeter.prepaymentmanage.util.LoggerUtil;
@@ -30,7 +30,6 @@ import rx.schedulers.Schedulers;
  */
 public class UserLightControlPresenter implements IUserLightControlPresenter {
     private String TAG = "UserLightControlPresenter";
-    private Subscription mWaterSubscribe;
     private Subscription mEleSubscribe;
     private ApiService apiService;
     private Subscription mNewIdSubscribe;
@@ -57,17 +56,17 @@ public class UserLightControlPresenter implements IUserLightControlPresenter {
                 .getApiService();
         iUserLightControlShow.showLoading();
 
-        mWaterSubscribe = apiService.getWaterDevicesInfo(comaddress)
+        mEleSubscribe = apiService.getEleDevicesInfo(comaddress)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .flatMap(new Func1<WaterUseInfoBean, Observable<WaterUseInfoBean.RESPONSEXMLBean>>() {
+                .flatMap(new Func1<EleUseInfoBean, Observable<EleUseInfoBean.RESPONSEXMLBean>>() {
                     @Override
-                    public Observable<WaterUseInfoBean.RESPONSEXMLBean> call(WaterUseInfoBean waterUseInfoBean) {
-                        String rescode = waterUseInfoBean.getRESCODE();
-                        String resmsg = waterUseInfoBean.getRESMSG();
+                    public Observable<EleUseInfoBean.RESPONSEXMLBean> call(EleUseInfoBean eleUseInfoBean) {
+                        String rescode = eleUseInfoBean.getRESCODE();
+                        String resmsg = eleUseInfoBean.getRESMSG();
                         if ("1".equals(rescode)) {
                             if ("成功".equals(resmsg)) {
-                                return Observable.from(waterUseInfoBean.getRESPONSEXML());
+                                return Observable.from(eleUseInfoBean.getRESPONSEXML());
                             } else {
                                 iUserLightControlShow.showToast("获取数据失败，请重试");
                                 iUserLightControlShow.hideLoading();
@@ -80,7 +79,7 @@ public class UserLightControlPresenter implements IUserLightControlPresenter {
                         }
                     }
                 })
-                .subscribe(new Subscriber<WaterUseInfoBean.RESPONSEXMLBean>() {
+                .subscribe(new Subscriber<EleUseInfoBean.RESPONSEXMLBean>() {
                     @Override
                     public void onCompleted() {
 
@@ -98,13 +97,23 @@ public class UserLightControlPresenter implements IUserLightControlPresenter {
                     }
 
                     @Override
-                    public void onNext(WaterUseInfoBean.RESPONSEXMLBean responsexmlBean) {
-                        String bzsye = responsexmlBean.getBZSYE();
-                        String sbzt = responsexmlBean.getSBZT();
+                    public void onNext(EleUseInfoBean.RESPONSEXMLBean responsexmlBean) {
+                        String yffye = responsexmlBean.getYFFYE();
+                        String bzdye = responsexmlBean.getBZDYE();
+                        String dbzt = responsexmlBean.getDBZT();
+                        String zydl = responsexmlBean.getZYDL();
                         String zye = responsexmlBean.getZYE();
-                        String zysl = responsexmlBean.getZYSL();
                         String updatedtime = responsexmlBean.getUPDATEDTIME();
-                        iUserLightControlShow.showData("", bzsye, zye, zysl, sbzt, updatedtime);
+                        Log.i(TAG,"yffye"+yffye);
+                        Log.i(TAG,"bzdye"+bzdye);
+                        Log.i(TAG,"dbzt"+dbzt);
+                        Log.i(TAG,"zydl"+zydl);
+                        Log.i(TAG,"zye"+zye);
+                        Log.i(TAG,"yffye"+yffye);
+                        Log.i(TAG,"updatedtime"+updatedtime);
+
+
+                        iUserLightControlShow.showData(yffye, bzdye, zye, zydl, dbzt, updatedtime);
                         iUserLightControlShow.hideLoading();
                     }
                 });
@@ -247,9 +256,6 @@ public class UserLightControlPresenter implements IUserLightControlPresenter {
 
     @Override
     public void rxUnsubscribe() {
-        if (mWaterSubscribe != null) {
-            mWaterSubscribe.unsubscribe();
-        }
         if (mEleSubscribe != null) {
             mEleSubscribe.unsubscribe();
         }

@@ -144,11 +144,8 @@ public class UserLightChoiceActivity extends BaseActivity implements IDeviceChoi
                                     ChangeRoomPresenter presenter = new ChangeRoomPresenter(UserLightChoiceActivity.this);
                                     presenter.unbindRoom();
                                     dialog.dismiss();
-
-
                                 }
-                            })
-                            .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            }).setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                 @Override
                                 public void onClick(SweetAlertDialog sweetAlertDialog) {
                                     sweetAlertDialog.dismiss();

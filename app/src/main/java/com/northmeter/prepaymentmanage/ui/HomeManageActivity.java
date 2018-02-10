@@ -53,7 +53,8 @@ public class HomeManageActivity extends BaseActivity {
             R.id.iv_manage_home_equipment,
             R.id.iv_manage_home_lock,
             R.id.iv_home_setting,
-            R.id.iv_manage_home_light})
+            R.id.iv_manage_home_light,
+            R.id.iv_manage_home_air_condition})
     public void onClick(View view) {
 
         switch (view.getId()) {
@@ -85,6 +86,12 @@ public class HomeManageActivity extends BaseActivity {
                 intent3.putExtra(Contants.METERTYPE, "灯控");
                 intent3.putExtra("power", "manager");
                 startActivity(intent3);
+                break;
+            case R.id.iv_manage_home_air_condition://分体空调
+                Intent intent4 = new Intent(MyApplication.getContext(),EquipmentSelection.class);
+                intent4.putExtra(Contants.METERTYPE, "空调");
+                intent4.putExtra("power", "manager");
+                startActivity(intent4);
                 break;
             case R.id.iv_home_setting:
                 //打开左侧菜单

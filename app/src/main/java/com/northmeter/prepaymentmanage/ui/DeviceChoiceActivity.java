@@ -68,24 +68,26 @@ public class DeviceChoiceActivity extends BaseActivity implements IDeviceChoiceA
 
     @Override
     public void showDevices(final List<UserMeterBean.RESPONSEXMLBean> responsexml) {
-        LinearLayoutManager manager = new LinearLayoutManager(MyApplication.getContext());
-        mRecycerview.setLayoutManager(manager);
-        DeviceChoiceAdapter adapter = new DeviceChoiceAdapter(DeviceChoiceActivity.this, responsexml);
-        mRecycerview.setAdapter(adapter);
-        mRecycerview.addItemDecoration(new DividerItemDecoration(MyApplication.getContext(), manager.getOrientation()));
+        if(!this.isFinishing()){
+            LinearLayoutManager manager = new LinearLayoutManager(MyApplication.getContext());
+            mRecycerview.setLayoutManager(manager);
+            DeviceChoiceAdapter adapter = new DeviceChoiceAdapter(DeviceChoiceActivity.this, responsexml);
+            mRecycerview.setAdapter(adapter);
+            mRecycerview.addItemDecoration(new DividerItemDecoration(MyApplication.getContext(), manager.getOrientation()));
 
-        adapter.setOnItemClickListener(new DeviceChoiceAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                String metertype = responsexml.get(position).getMETERTYPE();
-                String comaddress = responsexml.get(position).getCOMADDRESS();
-                LoggerUtil.d(comaddress);
-                Intent intent = new Intent(MyApplication.getContext(), DevicesQueryActivity.class);
-                intent.putExtra(Contants.DEVICES_QUERY_METER_TYPE_INTENT_EXTRA, metertype);
-                intent.putExtra(Contants.DEVICES_QUERY_COMADDRESS_INTENT_EXTRA, comaddress);
-                startActivity(intent);
-            }
-        });
+            adapter.setOnItemClickListener(new DeviceChoiceAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, int position) {
+                    String metertype = responsexml.get(position).getMETERTYPE();
+                    String comaddress = responsexml.get(position).getCOMADDRESS();
+                    LoggerUtil.d(comaddress);
+                    Intent intent = new Intent(MyApplication.getContext(), DevicesQueryActivity.class);
+                    intent.putExtra(Contants.DEVICES_QUERY_METER_TYPE_INTENT_EXTRA, metertype);
+                    intent.putExtra(Contants.DEVICES_QUERY_COMADDRESS_INTENT_EXTRA, comaddress);
+                    startActivity(intent);
+                }
+            });
+        }
     }
 
     @Override
@@ -146,8 +148,6 @@ public class DeviceChoiceActivity extends BaseActivity implements IDeviceChoiceA
                                     ChangeRoomPresenter presenter = new ChangeRoomPresenter(DeviceChoiceActivity.this);
                                     presenter.unbindRoom();
                                     dialog.dismiss();
-
-
                                 }
                             })
                             .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {

@@ -3,9 +3,7 @@ package com.northmeter.prepaymentmanage.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
@@ -21,18 +19,14 @@ import com.northmeter.prepaymentmanage.base.BaseActivity;
 import com.northmeter.prepaymentmanage.model.EquipmentBean;
 import com.northmeter.prepaymentmanage.model.EventBus.AlreadyBuilding;
 import com.northmeter.prepaymentmanage.presenter.EquipmentSelectionPresenter;
-import com.northmeter.prepaymentmanage.presenter.i.IEquipmentSelectionPresenter;
 import com.northmeter.prepaymentmanage.ui.GateLock.OpenDoorDetailActivity;
+import com.northmeter.prepaymentmanage.ui.air_conditioner.activity.ManagerAirConditionerControlActivity;
 import com.northmeter.prepaymentmanage.ui.i.IEquipmentSelection;
 import com.northmeter.prepaymentmanage.ui.light.activity.ManagerLightControlActivity;
-import com.northmeter.prepaymentmanage.ui.light.activity.UserLightControlActivity;
-import com.northmeter.prepaymentmanage.ui.widget.CustomFooterView;
 import com.northmeter.prepaymentmanage.util.AES;
 import com.northmeter.prepaymentmanage.util.Contants;
-import com.northmeter.prepaymentmanage.util.LoggerUtil;
 import com.northmeter.prepaymentmanage.util.MyApplication;
 import com.northmeter.prepaymentmanage.util.SharedPreferencesUtil;
-import com.northmeter.prepaymentmanage.util.ToastUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -85,7 +79,7 @@ public class EquipmentSelection extends BaseActivity implements XRefreshView.XRe
         type = getIntent().getStringExtra(Contants.METERTYPE);
         power = getIntent().getStringExtra("power");
 
-        if(type.equals("门锁")||type.equals("灯控")){
+        if(type.equals("门锁")||type.equals("灯控")||type.equals("空调")){
             tvTitleTitlebar.setText(type + "设备");
         }else{
             tvTitleTitlebar.setText("用" + type + "设备");
@@ -257,18 +251,21 @@ public class EquipmentSelection extends BaseActivity implements XRefreshView.XRe
 
     @Override
     public void showNewData(int refreshType, String count, String accuracy, String normal, List<EquipmentBean.RESPONSEXMLBean> newdatas) {
-        String msg = "";
-        msg = "表计总数: " + count + "  通讯正常数:  " + normal + "  通讯正常率: " + accuracy;
-        tv_showMessage.setText(msg);
-         //下拉
-        if(refreshType==0){
-           // Log.i("LHT","下");
-            adapter.update(newdatas);
-            //上拉
-        }else{
-          //  Log.i("LHT","上");
-            adapter.add(newdatas);
+        if(!this.isFinishing()){
+            String msg = "";
+            msg = "表计总数: " + count + "  通讯正常数:  " + normal + "  通讯正常率: " + accuracy;
+            tv_showMessage.setText(msg);
+            //下拉
+            if(refreshType==0){
+                // Log.i("LHT","下");
+                adapter.update(newdatas);
+                //上拉
+            }else{
+                //  Log.i("LHT","上");
+                adapter.add(newdatas);
+            }
         }
+
     }
 
     @Override
@@ -317,11 +314,17 @@ public class EquipmentSelection extends BaseActivity implements XRefreshView.XRe
                 intent_1.putExtra(Contants.METERTYPE, type);
                 startActivity(intent_1);
                 break;
-            default:
-                Intent intent_2 = new Intent(EquipmentSelection.this, EquipmentDetail.class);
+            case "空调":
+                Intent intent_2 = new Intent(EquipmentSelection.this, ManagerAirConditionerControlActivity.class);
                 intent_2.putExtra("equipment", equipment);
                 intent_2.putExtra(Contants.METERTYPE, type);
                 startActivity(intent_2);
+                break;
+            default:
+                Intent intent_ = new Intent(EquipmentSelection.this, EquipmentDetail.class);
+                intent_.putExtra("equipment", equipment);
+                intent_.putExtra(Contants.METERTYPE, type);
+                startActivity(intent_);
                 break;
         }
 

@@ -93,7 +93,8 @@
         <activity android:name=".ui.GateLock.MainOfLogqueryActivity"/>
         <activity android:name=".ui.GateLock.OpenDoorActivity"/>
         <activity android:name=".ui.GateLock.OpenDoorDetailActivity"/>
-
+        <!--空调控制-->
+        <activity android:name=".ui.air_conditioner.activity.ManagerAirConditionerControlActivity"/>
         <!-- &lt;!&ndash; User defined. 用户自定义的广播接收器&ndash;&gt; -->
         <receiver
             android:name=".Reciver.JPushBrocastReceiver"

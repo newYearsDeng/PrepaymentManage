@@ -336,7 +336,6 @@ public class EquipmentSelection extends BaseActivity implements XRefreshView.XRe
         selectedArea_ID = info.Area_ID;
         pageIndex = 1;
         startRefresh();
-
     }
 
     //监听返回键
@@ -347,6 +346,5 @@ public class EquipmentSelection extends BaseActivity implements XRefreshView.XRe
         }
         super.onBackPressed();
     }
-
 
 }

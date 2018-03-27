@@ -27,7 +27,7 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by lht on 2016/11/17.
+ * Created by admin on 2016/11/17.
  * des:查询Presenter
  */
 public class Read_QueryPresenter implements ICommonQueryPresenter {
@@ -51,13 +51,13 @@ public class Read_QueryPresenter implements ICommonQueryPresenter {
 
     public void getData(final int xRefreshType, String buildingId, final String dateType, String startDate, String meterType, int pageIndex, int pageSize) {
 
-        Log.i("LHT", "building " + buildingId);
-        Log.i("LHT", "dateType " + dateType);
-        Log.i("LHT", "startDate " + startDate);
-        Log.i("LHT", "meterType " + meterType);
-        Log.i("LHT", "pageIndex " + pageIndex);
-        Log.i("LHT", "pageSize " + pageSize);
-        Log.i("LHT", "-------------------------------------------");
+        Log.i("admin", "building " + buildingId);
+        Log.i("admin", "dateType " + dateType);
+        Log.i("admin", "startDate " + startDate);
+        Log.i("admin", "meterType " + meterType);
+        Log.i("admin", "pageIndex " + pageIndex);
+        Log.i("admin", "pageSize " + pageSize);
+        Log.i("admin", "-------------------------------------------");
 
 
         // fragment.startRefresh();
@@ -71,8 +71,8 @@ public class Read_QueryPresenter implements ICommonQueryPresenter {
 
                         String rescode = buildMeterReadData.getRESCODE();
                         String resmsg = buildMeterReadData.getRESMSG();
-                        Log.i("LHT", dateType + "-->" + rescode + "  " + resmsg);
-                        Log.i("LHT", "--------------------------");
+                        Log.i("admin", dateType + "-->" + rescode + "  " + resmsg);
+                        Log.i("admin", "--------------------------");
                         if (rescode.equals("1")) {
                             if (resmsg.equals("成功")) {
                                 return buildMeterReadData.getRESPONSEXML();

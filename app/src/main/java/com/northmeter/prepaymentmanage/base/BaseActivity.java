@@ -15,7 +15,7 @@ import butterknife.Unbinder;
 import cn.jpush.android.api.JPushInterface;
 
 /**
- *@author  Lht
+ *@author  admin
  *@time    2016/12/20 17:56
  *@des:    BaseActivity
  */

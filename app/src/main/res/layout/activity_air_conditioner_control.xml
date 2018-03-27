@@ -236,7 +236,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="30px"
                     android:textColor="#000000"
-                    android:text="灯状态"
+                    android:text="空调状态"
                     android:textSize="36px" />
 
                 <TextView

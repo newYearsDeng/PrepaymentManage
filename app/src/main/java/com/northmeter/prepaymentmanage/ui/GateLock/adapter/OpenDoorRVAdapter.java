@@ -68,7 +68,6 @@ public class OpenDoorRVAdapter extends RecyclerView.Adapter<OpenDoorRVAdapter.Op
                 }else{
                     System.out.println("关门"+position);
                 }
-
             }
         });
     }
@@ -92,4 +91,5 @@ public class OpenDoorRVAdapter extends RecyclerView.Adapter<OpenDoorRVAdapter.Op
         }
 
     }
+
 }

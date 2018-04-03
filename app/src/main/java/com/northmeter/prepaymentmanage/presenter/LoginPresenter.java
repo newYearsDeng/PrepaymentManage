@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.northmeter.prepaymentmanage.model.LoginBean;
+import com.northmeter.prepaymentmanage.model.bdBean.BDLoginBean;
 import com.northmeter.prepaymentmanage.presenter.i.ILoginPresenter;
 import com.northmeter.prepaymentmanage.ui.i.ILoginActivity;
 import com.northmeter.prepaymentmanage.util.LoggerUtil;
@@ -59,10 +60,9 @@ public class LoginPresenter implements ILoginPresenter {
                         @Override
                         public Observable<LoginBean.RESPONSEXMLBean> call(LoginBean loginBean) {
 
-
                             String rescode = loginBean.getRESCODE();
                             String resmsg = loginBean.getRESMSG();
-                            Log.i("LHT","loginBean "+loginBean.toString());
+                            Log.i("admin","loginBean "+loginBean.toString());
                             if ("0".equals(rescode)) {
                                 //返回值为0
                                 if ("接口异常".equals(resmsg)) {
@@ -88,7 +88,7 @@ public class LoginPresenter implements ILoginPresenter {
                                     mLoginView.hideLoading();
                                     return null;
                                 } else {
-                                    mLoginView.showToast("登录失败");
+                                     mLoginView.showToast("登录失败");
                                     mLoginView.btnClickable(true);
                                     mLoginView.hideLoading();
                                     return null;
@@ -134,6 +134,34 @@ public class LoginPresenter implements ILoginPresenter {
             mLoginView.showToast("账号密码不能为空");
             return;
         }
+    }
+
+    @Override
+    public void dbConfirmLogin(){
+        mLoginSubscribe = RetrofitHelper.getApiService().getLogin("","","","")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .flatMap(new Func1<BDLoginBean, Observable<BDLoginBean>>() {
+                    @Override
+                    public Observable<BDLoginBean> call(BDLoginBean bdLoginBean) {
+                        return Observable.just(bdLoginBean);
+                    }
+                }).subscribe(new Subscriber<BDLoginBean>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(BDLoginBean bdLoginBean) {
+
+                    }
+                });
     }
 
     @Override

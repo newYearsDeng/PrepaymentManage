@@ -7,6 +7,7 @@ package com.northmeter.prepaymentmanage.presenter.i;
  */
 public interface ILoginPresenter {
     void confirmLogin(String name,String password);
+    void dbConfirmLogin();
     /**
      * 取消rx的注册
      */

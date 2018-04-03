@@ -19,6 +19,7 @@ import com.northmeter.prepaymentmanage.model.RequestResult;
 import com.northmeter.prepaymentmanage.model.TopUp;
 import com.northmeter.prepaymentmanage.model.UserMeterBean;
 import com.northmeter.prepaymentmanage.model.WaterUseInfoBean;
+import com.northmeter.prepaymentmanage.model.bdBean.BDLoginBean;
 import com.northmeter.prepaymentmanage.ui.GateLock.model.ReadDayLogBean;
 
 import java.util.List;
@@ -32,7 +33,7 @@ import rx.Observable;
 import rx.Scheduler;
 
 /**
- * Created by lht on 2016/11/10.
+ * Created by admin on 2016/11/10.
  */
 public interface ApiService {
     //第一级目录的建筑信息
@@ -195,4 +196,90 @@ public interface ApiService {
                                                        @Query("METERTYPE") String meterType,
                                                        @Query("PageIndex")int pageIndex,
                                                        @Query("PageSize")int pageSize);
+
+
+
+    //----------------------------北电云接口-------------------------------
+
+    //用户登录
+    @FormUrlEncoded
+    @POST("/api/app/login")
+    Observable<BDLoginBean> getLogin(@Field("userName")String userName,
+                                     @Field("time")String time,
+                                     @Field("num")String num,
+                                     @Field("sign")String sign);
+
+    //获取采集设备
+    @GET("/api/app/concentratorinfo/getDeviceList")
+    Observable getDeviceList(@Query("token")String token,
+                             @Query("page")String page,
+                             @Query("row")String row,
+                             @Query("concentratorType")String concentratorType,
+                             @Query("concentratorCode")String concentratorCode,
+                             @Query("projCode")String projCode);
+
+    //获取计量设备信息
+    @GET("/api/app/meterinfo/getSublist")
+    Observable getSublist(@Query("token")String token,
+                          @Query("row")String row,
+                          @Query("page")String page,
+                          @Query("deviceType")String deviceType,
+                          @Query("comAddress")String comAddress,
+                          @Query("projCode")String projCode);
+
+    //获取计量设备组网关系
+    @GET("/api/app/meterinfo/getSublistByDevice")
+    Observable getSublistByDevice(@Query("token")String token,
+                                  @Query("row")String row,
+                                  @Query("page")String page,
+                                  @Query("concentratorType")String concentratorType,
+                                  @Query("concentratorCode")String concentratorCode,
+                                  @Query("projCode")String projCode);
+
+    //获取冻结抄表数据
+    @GET("/api/app/hdmdata/getHDMData")
+    Observable getHDMData(@Query("token")String token,
+                          @Query("type")String type,
+                          @Query("row")String row,
+                          @Query("page")String page,
+                          @Query("timeFrom")String timeFrom,
+                          @Query("timeTo")String timeTo,
+                          @Query("deviceType")String deviceType,
+                          @Query("comAddress")String comAddress,
+                          @Query("projCode")String projCode);
+
+    //获取项目信息
+    @GET("/api/app/project/getProjectList")
+    Observable getProjectList(@Query("token")String token,
+                              @Query("type")String type,
+                              @Query("row")String row);
+
+    //获取实时点抄数据
+    @FormUrlEncoded
+    @POST("/api/app/edataread/getActData")
+    Observable getEdatareadActData(@Field("token")String token,
+                                   @Field("deviceType")String deviceType,
+                                   @Field("comAddress")String comAddress,
+                                   @Field("projCode")String projCode,
+                                   @Field("dataId")String dataId,
+                                   @Field("maxWaitingTime")String maxWaitingTime);
+
+    //获取表计最近一次采集的用能数据
+    @FormUrlEncoded
+    @POST("/api/app/dataread/getActData")
+    Observable getDatareadActData(@Field("token")String token,
+                                  @Field("deviceType")String deviceType,
+                                  @Field("comAddress")String comAddress,
+                                  @Field("projCode")String projCode,
+                                  @Field("dataId")String dataId,
+                                  @Field("maxWaitingTime")String maxWaitingTime);
+
+
+
+
+
+
+
+
+
 }

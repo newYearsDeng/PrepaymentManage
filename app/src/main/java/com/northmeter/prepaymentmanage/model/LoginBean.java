@@ -3,7 +3,7 @@ package com.northmeter.prepaymentmanage.model;
 import java.util.List;
 
 /**
- * @author zz
+ * @author admin
  * @time 2016/11/11 14:58
  * @des 登录的数据
  */

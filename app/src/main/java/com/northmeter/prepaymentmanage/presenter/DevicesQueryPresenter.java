@@ -27,7 +27,7 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * @author zz
+ * @author admin
  * @time 2016/11/11 17:31
  * @des 水/电 表设备查询的presenter
  */
@@ -166,12 +166,12 @@ public class DevicesQueryPresenter implements IDevicesQueryPresenter {
      */
     //执行抄表任务
     public void readingMeter(final String comadress, final String metertype) {
-        Log.i("LHT", "---------点钞------------");
-        Log.i("LHT", "comadress " + comadress);
-        Log.i("LHT", "meterType " + metertype);
-        Log.i("LHT", "-------------------");
+        Log.i("amdin", "---------点钞------------");
+        Log.i("amdin", "comadress " + comadress);
+        Log.i("amdin", "meterType " + metertype);
+        Log.i("amdin", "-------------------");
         startTime = System.currentTimeMillis();
-        Log.i("LHT", "startTime " + startTime);
+        Log.i("amdin", "startTime " + startTime);
         mDevicesQueryView.showLoading();
         mNewIdSubscribe = apiService.getNewId(comadress, metertype)
                 .subscribeOn(Schedulers.io())
@@ -226,7 +226,7 @@ public class DevicesQueryPresenter implements IDevicesQueryPresenter {
     }
 
     private void getReadingState(final String newid, final String comaddress, final String meterType) {
-        Log.i("LHT", "newid " + newid);
+        Log.i("amdin", "newid " + newid);
         mDevicesQueryView.showMeterState(1, "任务正在执行中，请等待...");
         mStateSubscribe = apiService.getReadingState(newid)
                 .subscribeOn(Schedulers.io())
@@ -268,7 +268,7 @@ public class DevicesQueryPresenter implements IDevicesQueryPresenter {
                                             @Override
                                             public void call(Long aLong) {
                                                 final long endtime = System.currentTimeMillis();
-                                                Log.i("Lht", "endTime " + endtime);
+                                                Log.i("amdin", "endTime " + endtime);
                                                 if ((endtime - startTime) <= timeLimit) {
                                                     getReadingState(newid, comaddress, meterType);
                                                 } else {

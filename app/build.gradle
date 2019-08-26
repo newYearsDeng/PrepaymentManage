@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
 
 android {
     signingConfigs {
@@ -10,8 +9,8 @@ android {
             storePassword 'android'
         }
     }
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     packagingOptions {
         exclude 'META-INF/LICENSE'
@@ -21,10 +20,11 @@ android {
 
     defaultConfig {
         applicationId "com.northmeter.prepaymentmanage"
-        minSdkVersion 15
-        targetSdkVersion 24
+        minSdkVersion 19
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
             //选择要添加的对应cpu类型的.so库。
             abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
@@ -32,7 +32,7 @@ android {
         }
         manifestPlaceholders = [
                 JPUSH_PKGNAME: applicationId,
-                JPUSH_APPKEY : "f399ea38b1a0a8dd498da455",//"a480c64e574f93ed5d9c3c79", //JPush上注册的包名对应的appkey.
+                JPUSH_APPKEY : "a480c64e574f93ed5d9c3c79",//"f399ea38b1a0a8dd498da455", //JPush上注册的包名对应的appkey.
                 JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
         signingConfig signingConfigs.prepaymentmanage
@@ -58,42 +58,46 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    //compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
-    //ui
-    compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.android.support:recyclerview-v7:24.0.0'
-    compile 'com.android.support:design:24.0.0'
-    compile 'cn.pedant.sweetalert:library:1.3'
-    compile 'com.github.ybq:Android-SpinKit:1.1.0'
-    compile 'com.zhy:autolayout:1.4.5'
-    compile 'com.jakewharton:butterknife:8.2.0'
-    apt 'com.jakewharton:butterknife-compiler:8.2.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation 'com.zhy:autolayout:1.4.5'
+    //控件绑定
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation 'org.litepal.android:core:1.3.2'
+    implementation 'cn.pedant.sweetalert:library:1.3'
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+
     //网络
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     //网络缓存
-    compile 'com.github.VictorAlbertos.RxCache:core:1.4.6'
+    implementation 'com.github.VictorAlbertos.RxCache:core:1.4.6'
     //RXJava
-    compile 'io.reactivex:rxandroid:1.1.0'
-    compile 'io.reactivex:rxjava:1.1.0'
+    implementation 'io.reactivex:rxandroid:1.1.0'
+    implementation 'io.reactivex:rxjava:1.1.0'
     //图片加载
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
     //下拉刷新
-    compile 'com.huxq17.xrefreshview:xrefreshview:3.5.5'
+    implementation 'com.huxq17.xrefreshview:xrefreshview:3.5.5'
     //事件总线
-    compile 'org.greenrobot:eventbus:3.0.0'
+    implementation 'org.greenrobot:eventbus:3.0.0'
     //统计图
-    compile 'com.github.PhilJay:MPAndroidChart:v2.2.3'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.3'
     //极光推送
-    compile 'cn.jiguang.sdk:jpush:3.0.0'
-    //此处以JPush 3.0.0 版本为例。
-    compile 'cn.jiguang.sdk:jcore:1.0.0'
-    // 此处以JCore 1.0.0 版本为例。
+    implementation 'cn.jiguang.sdk:jpush:3.1.3'
+    implementation 'cn.jiguang.sdk:jcore:1.2.1'
 
     // compile files('libs/libammsdk.jar')
-    compile files('libs/httpclient-4.5.jar')
-    compile files('libs/httpcore-4.4.1.jar')
+    implementation files('libs/httpclient-4.5.jar')
+    implementation files('libs/httpcore-4.4.1.jar')
 }

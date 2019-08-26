@@ -1,12 +1,13 @@
 package com.northmeter.prepaymentmanage.adapters;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.northmeter.prepaymentmanage.R;
 import com.northmeter.prepaymentmanage.model.UserMeterBean;
@@ -54,8 +55,6 @@ public class DeviceChoiceAdapter extends RecyclerView.Adapter<DeviceChoiceAdapte
     @Override
     public void onBindViewHolder(final DeviceChoiceViewholder holder, int position) {
         String metertype = mData.get(position).getMETERTYPE();
-
-
         switch(metertype){
             case "水":
                 Picasso.with(MyApplication.getContext()).load(R.drawable.icon_device_choice_water).into(holder.mIvMeterType);

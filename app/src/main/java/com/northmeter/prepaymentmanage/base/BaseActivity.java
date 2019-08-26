@@ -2,9 +2,10 @@ package com.northmeter.prepaymentmanage.base;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethodManager;
+
+import androidx.annotation.Nullable;
 
 import com.zhy.autolayout.AutoLayoutActivity;
 

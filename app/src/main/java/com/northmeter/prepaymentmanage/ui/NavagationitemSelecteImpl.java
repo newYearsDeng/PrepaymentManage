@@ -4,20 +4,19 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.IPackageStatsObserver;
 import android.content.pm.PackageStats;
 import android.os.Build;
 import android.os.RemoteException;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 import android.view.MenuItem;
-import android.widget.ImageView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 import com.northmeter.prepaymentmanage.R;
 import com.northmeter.prepaymentmanage.presenter.ChangeRoomPresenter;
 import com.northmeter.prepaymentmanage.ui.i.IChangeRoom;

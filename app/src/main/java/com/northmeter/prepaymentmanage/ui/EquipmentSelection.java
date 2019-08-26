@@ -2,7 +2,6 @@ package com.northmeter.prepaymentmanage.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AbsListView;
@@ -11,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.andview.refreshview.XRefreshView;
 import com.northmeter.prepaymentmanage.R;

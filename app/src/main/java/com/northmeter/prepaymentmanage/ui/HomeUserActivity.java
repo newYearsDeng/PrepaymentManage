@@ -2,14 +2,15 @@ package com.northmeter.prepaymentmanage.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 import com.northmeter.prepaymentmanage.R;
 import com.northmeter.prepaymentmanage.base.BaseActivity;
 import com.northmeter.prepaymentmanage.ui.light.activity.UserLightChoiceActivity;
@@ -86,14 +87,14 @@ public class HomeUserActivity extends BaseActivity {
                 }
                 break;
             case R.id.iv_userhome_lighting://用户照明管理
-                //ToastUtil.showShort(MyApplication.getContext(), "功能暂未开放");
-                if (TextUtils.isEmpty(buildingID)) {
-                    //如果buidingid为空就表示没绑定房间
-                    startActivity(new Intent(MyApplication.getContext(), BindRoomActivity.class));
-                } else {
-                    Intent intent = new Intent(MyApplication.getContext(), UserLightChoiceActivity.class);
-                    startActivity(intent);
-                }
+                ToastUtil.showShort(MyApplication.getContext(), "功能暂未开放");
+//                if (TextUtils.isEmpty(buildingID)) {
+//                    //如果buidingid为空就表示没绑定房间
+//                    startActivity(new Intent(MyApplication.getContext(), BindRoomActivity.class));
+//                } else {
+//                    Intent intent = new Intent(MyApplication.getContext(), UserLightChoiceActivity.class);
+//                    startActivity(intent);
+//                }
                 break;
             case R.id.iv_userhome_air_condition://用户空调管理
                 ToastUtil.showShort(MyApplication.getContext(), "功能暂未开放");

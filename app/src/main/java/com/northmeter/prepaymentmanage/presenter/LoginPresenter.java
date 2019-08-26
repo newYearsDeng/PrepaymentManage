@@ -22,7 +22,7 @@ import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
- * @author zz
+ * @author admin
  * @time 2016/11/11 15:04
  * @des 登录的presenter
  */

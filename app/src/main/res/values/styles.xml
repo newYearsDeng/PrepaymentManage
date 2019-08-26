@@ -31,9 +31,9 @@
     <!-- electricmanagemnt -->
     <style name="electricity_text">
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textSize">40px</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textColor">#000000</item>
-        <item name="android:layout_marginLeft">29px</item>
+        <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
 
@@ -44,7 +44,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_centerVertical">true</item>
-        <item name="android:layout_marginRight">29px</item>
+        <item name="android:layout_marginRight">15dp</item>
         <item name="android:src">@drawable/icon_back_right</item>
     </style>
 
@@ -60,7 +60,7 @@
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:textColor">#f7931e</item>
-        <item name="android:textSize">36px</item>
+        <item name="android:textSize">17sp</item>
     </style>
 
     <style name="tablayout_text_apperance">
@@ -71,7 +71,7 @@
     <!--tv_stytle_fragment_empty-->
     <style name="fragment_comment_tv">
         <item name="android:gravity">center</item>
-        <item name="android:textSize">30px</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">#000</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
@@ -133,10 +133,10 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">80px</item>
-        <item name="android:layout_margin">10px</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_margin">5dp</item>
         <item name="android:textColor">#00BCD4</item>
-        <item name="android:textSize">36px</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:background">@drawable/selector_icon_tv_dialog_pay</item>
     </style>
 

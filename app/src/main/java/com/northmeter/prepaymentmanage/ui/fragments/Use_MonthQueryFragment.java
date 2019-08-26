@@ -3,12 +3,13 @@ package com.northmeter.prepaymentmanage.ui.fragments;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.northmeter.prepaymentmanage.R;
 import com.northmeter.prepaymentmanage.base.BaseFragment;

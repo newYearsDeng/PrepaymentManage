@@ -3,9 +3,6 @@ package com.northmeter.prepaymentmanage.ui.fragments;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +10,20 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.northmeter.prepaymentmanage.R;
 import com.northmeter.prepaymentmanage.adapters.SpinnerAdpter;
 import com.northmeter.prepaymentmanage.model.Entity.RequestBuilding;
 import com.northmeter.prepaymentmanage.model.EventBus.AlreadyBuilding;
-import com.northmeter.prepaymentmanage.model.RequestResult;
 import com.northmeter.prepaymentmanage.ui.fragments.presenter.SelectFragmentPresenter;
 import com.northmeter.prepaymentmanage.ui.fragments.view.SelectBuildingView;
 import com.northmeter.prepaymentmanage.util.Contants;
 import com.northmeter.prepaymentmanage.util.MyApplication;
 import com.northmeter.prepaymentmanage.util.SharedPreferencesUtil;
 import com.northmeter.prepaymentmanage.util.ToastUtil;
-import com.northmeter.prepaymentmanage.util.net.ApiService;
-import com.northmeter.prepaymentmanage.util.net.RetrofitHelper;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -37,7 +34,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import rx.Subscription;
 
 /**
  * created by lht on 2016/12/19

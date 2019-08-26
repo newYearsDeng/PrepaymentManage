@@ -20,8 +20,11 @@ public class Contants {
     public static final String DECRYPT_ID_KEY = "login_edit_text_id_key";
     public static final String SP_AES_ID_KEY = AES.encrypt("user_id", "login_sp_id_key");
     public static final String SP_AES_BUILDING_KEY = "aes_building_id";
-    //http://10.168.1.203:7089/
+    //北电服务器
     public static final String BASEURL="http://218.17.157.121:7089/Service1.asmx/";
+    //厦门大学服务器
+    //public static final String BASEURL="http://47.100.136.41:8012/Service1.asmx/";
+    //http://10.168.1.203:7089/
     //public static final String BASEURL="http://218.17.157.121:9149/Service1.asmx/";
     //http://218.17.157.121:9149/Service1.asmx/GetAreaInfo?
     //http://218.17.157.121:9147/Service1.asmx/VersionNumber?
@@ -46,7 +49,7 @@ public class Contants {
 
     public static final String STARTDATE="startDate";
 
-    // APP_ID 替换为你的应用从官方网站申请到的合法appId (微信支付)
+    // APP_ID 应用从官方网站申请到的合法appId (微信支付)
     public static final String APP_ID_WX = "wx05b357d1d2ff4061";
     //微信AppSecret
     public static final String App_Secret_WX = "0d9f869b459723685769a7d810b5c9a9";

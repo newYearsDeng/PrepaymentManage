@@ -8,6 +8,7 @@ import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.util.List;
 
+import io.rx_cache.internal.ProxyProviders;
 import rx.Subscriber;
 
 /**
@@ -40,13 +41,15 @@ public class SelectFragmentModel {
             return  "网络连接超时，请检查网络";
         } else if (e instanceof ConnectException) {
             return "无法连接到服务器，请检查网络";
+        } else if(e instanceof ProxyProviders.RxCacheException){
+            return "0";
         }
         return "未知错误 ，请联系开发人员";
     }
 
 
 
-    public void  getSonInfo(String areaId, String key, final LoadDataListener listener){
+    public void  getSonInfo(final String areaId, String key, final LoadDataListener listener){
          HttpData.getInstance().getSonInfo(areaId, key, new Subscriber<List<RequestBuilding>>() {
              @Override
              public void onCompleted() {
@@ -55,13 +58,12 @@ public class SelectFragmentModel {
 
              @Override
              public void onError(Throwable e) {
-                    listener.LoadFail(setToastMsg(e));
+                 listener.LoadFail(setToastMsg(e));
              }
 
              @Override
              public void onNext(List<RequestBuilding> requestBuildings) {
-
-                    listener.LoadSucess(requestBuildings);
+                 listener.LoadSucess(requestBuildings);
              }
          });
     }

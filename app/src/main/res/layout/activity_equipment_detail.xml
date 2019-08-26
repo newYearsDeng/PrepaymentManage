@@ -9,13 +9,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="397px"
+        android:layout_height="200dp"
         android:background="@drawable/image_new_page_3"
         android:orientation="vertical">
         <TextView
             android:gravity="center"
-            android:textSize="40px"
-            android:layout_marginTop="50px"
+            android:textSize="19sp"
+            android:layout_marginTop="25dp"
             android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,15 +24,15 @@
             android:id="@+id/tv_zje_ed"
             android:gravity="center"
             android:textStyle="bold"
-            android:textSize="60px"
-            android:layout_marginTop="30px"
+            android:textSize="21sp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="" />
 
         <LinearLayout
-            android:layout_marginTop="30px"
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -45,7 +45,7 @@
                 <TextView
                     android:text="@string/yffye"
                     android:gravity="center"
-                    android:textSize="40px"
+                    android:textSize="19sp"
                     android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
                     android:id="@+id/tv_yff_ed"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:textSize="40px"
+                    android:textSize="19sp"
                     android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                 <TextView
                     android:id="@+id/tv_bzje_name"
                     android:gravity="center"
-                    android:textSize="40px"
+                    android:textSize="19sp"
                     android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
                     android:id="@+id/tv_bzje_ed"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:textSize="40px"
+                    android:textSize="19sp"
                     android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -140,14 +140,13 @@
                 style="@style/electricity_text"
                 android:text="@string/dbzt" />
             <TextView
-
                 android:id="@+id/tv_dbzt_ed"
                 android:maxLines="2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical|right"
                 android:textColor="#f7931e"
-                android:textSize="36px"
+                android:textSize="17sp"
                />
         </LinearLayout>
 
@@ -190,9 +189,9 @@
         android:id="@+id/btn_reading_ed"
         android:text="@string/dbcb"
         style="@style/big_button_bg"
-        android:layout_marginLeft="40px"
-        android:layout_marginRight="40px"
-        android:layout_marginTop="60px"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
 
         />
 </LinearLayout>

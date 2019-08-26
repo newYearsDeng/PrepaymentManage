@@ -1,10 +1,6 @@
 package com.northmeter.prepaymentmanage.ui;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +8,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.tabs.TabLayout;
 import com.northmeter.prepaymentmanage.R;
 import com.northmeter.prepaymentmanage.adapters.EmptyFragmentPagerAdapter;
 import com.northmeter.prepaymentmanage.base.BaseActivity;

@@ -17,15 +17,15 @@
     android:clickable="true"
     >
     <ImageView
-        android:layout_width="25px"
-        android:layout_height="44px"
+        android:layout_width="12dp"
+        android:layout_height="22dp"
         android:src="@drawable/seletor_title_bar_back_icon"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="34px"
-        android:layout_marginLeft="10px"
+        android:textSize="17sp"
+        android:layout_marginLeft="5dp"
         android:textColor="@drawable/seletor_title_bar_back_text"
         android:text="@string/fh"/>
 </LinearLayout>
@@ -34,13 +34,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#fff"
-        android:textSize="44px"
+        android:textSize="19sp"
         android:layout_centerInParent="true" />
     <TextView
         android:id="@+id/tv_title_right_titlebar"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:textSize="34px"
+        android:textSize="17sp"
         android:gravity="center_vertical"
         android:layout_alignParentRight="true"
         android:textColor="@drawable/seletor_title_bar_back_text"

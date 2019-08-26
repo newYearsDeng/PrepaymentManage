@@ -1,8 +1,9 @@
 package com.northmeter.prepaymentmanage.adapters;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
 public class EmptyFragmentPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> fragments;
     private String[]  titles;
-    public EmptyFragmentPagerAdapter(FragmentManager fm,List<Fragment> fragments,String[]  titles ) {
+    public EmptyFragmentPagerAdapter(FragmentManager fm, List<Fragment> fragments, String[]  titles ) {
         super(fm);
         this.fragments=fragments;
         this.titles=titles;

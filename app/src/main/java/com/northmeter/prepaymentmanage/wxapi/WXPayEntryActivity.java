@@ -2,8 +2,9 @@ package com.northmeter.prepaymentmanage.wxapi;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.northmeter.prepaymentmanage.R;
 import com.northmeter.prepaymentmanage.util.Contants;

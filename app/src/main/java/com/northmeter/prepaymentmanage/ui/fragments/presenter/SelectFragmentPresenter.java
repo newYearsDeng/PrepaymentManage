@@ -57,7 +57,9 @@ public class SelectFragmentPresenter {
 
             @Override
             public void LoadFail(String e) {
-                view.toast(e);
+                if(!e.equals("0")){
+                    view.toast(e);
+                }
                 view.hideProgress();
             }
         });

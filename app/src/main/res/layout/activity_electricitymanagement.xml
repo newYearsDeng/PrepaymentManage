@@ -16,9 +16,9 @@
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="397px"
+            android:layout_height="200dp"
             android:layout_gravity="center_vertical"
-            android:layout_margin="30px"
+            android:layout_margin="15dp"
             android:background="@drawable/image_new_page_2">
         </RelativeLayout>
 
@@ -26,7 +26,7 @@
         <RelativeLayout
             android:id="@+id/rl_dbjk_electricity"
             android:layout_width="match_parent"
-            android:layout_height="120px"
+            android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/selector_tvbg_electricitymanagement">
 
@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="20px"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/icon_dw_jk" />
 
             <TextView
@@ -52,7 +52,7 @@
         <RelativeLayout
             android:id="@+id/rl_cbsjcx_elctricity"
             android:layout_width="match_parent"
-            android:layout_height="120px"
+            android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/selector_tvbg_electricitymanagement">
 
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="20px"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/icon_dwcb_cx" />
 
             <TextView
@@ -78,7 +78,7 @@
         <RelativeLayout
             android:id="@+id/rl_ydsjcx_elcricity"
             android:layout_width="match_parent"
-            android:layout_height="120px"
+            android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/selector_tvbg_electricitymanagement">
 
@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="20px"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/icon_dwsj_cx" />
 
             <TextView
@@ -104,7 +104,7 @@
         <RelativeLayout
             android:id="@+id/rl_dbyckz_electricity"
             android:layout_width="match_parent"
-            android:layout_height="120px"
+            android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:background="@drawable/selector_tvbg_electricitymanagement">
 
@@ -113,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="20px"
+                android:layout_marginLeft="10dp"
                 android:src="@drawable/icon_dw_kz" />
 
             <TextView

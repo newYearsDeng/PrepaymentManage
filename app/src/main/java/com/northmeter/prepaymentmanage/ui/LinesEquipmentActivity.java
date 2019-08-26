@@ -1,10 +1,11 @@
 package com.northmeter.prepaymentmanage.ui;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.northmeter.prepaymentmanage.R;
@@ -21,7 +22,6 @@ import com.northmeter.prepaymentmanage.util.recyclerview.DividerItemDecoration;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

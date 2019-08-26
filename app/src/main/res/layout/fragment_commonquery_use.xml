@@ -6,16 +6,16 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100px"
+        android:layout_height="50dp"
         android:background="#EEEEEF"
-        android:paddingLeft="32px"
-        android:paddingRight="32px">
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
         <TextView
             android:id="@+id/tv_area_query_use"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textColor="#000000"
-            android:textSize="40px"
+            android:textSize="17sp"
             android:gravity="center_vertical"
             />
         <TextView
@@ -24,8 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:paddingLeft="20px"
-            android:textSize="30px"
+            android:paddingLeft="10dp"
+            android:textSize="15sp"
             android:gravity="center"
             android:textColor="#fff"
             android:drawableRight="@drawable/icon_choosetime"
@@ -34,17 +34,17 @@
     <RelativeLayout
         android:id="@+id/rl_contol_query_use"
         android:layout_width="match_parent"
-        android:layout_height="50px"
+        android:layout_height="25dp"
         android:background="#fff"
-        android:paddingLeft="32px"
+        android:paddingLeft="16dp"
         android:gravity="center_vertical"
-        android:paddingRight="32px">
+        android:paddingRight="16dp">
         <TextView
             android:id="@+id/tv_name_query_use"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:layout_marginLeft="29px"
+            android:layout_marginLeft="17dp"
             />
         <TextView
             android:id="@+id/tv_switch_query_use"
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
-            android:paddingLeft="20px"
+            android:paddingLeft="10dp"
             android:gravity="center"
             android:text="切换到图表"
             android:drawableLeft="@drawable/icon_switchview"
